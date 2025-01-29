@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebLogic Environment Status</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="https://www.w3schools.com/favicon.ico">
+    <!-- Custom Styles -->
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: linear-gradient(to right, #3a6186, #89253e);
+        color: #fff; /* Text color for readability */
+    }
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 2px;
+        font-size: 0.8rem;
+        color: #000; /* Ensures table text is readable */
+    }
+    .bg-warning {
+        background-color: #ffeb3b !important; /* Light yellow */
+        color: #000;
+    }
+    .bg-success {
+        background-color: #4caf50 !important; /* Green */
+        color: #fff;
+    }
+    .section-header {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 10px 0 5px;
+    }
+    .report-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffeb3b; /* Yellow title for emphasis */
+    }
+    .table-header {
+        background-color: #6ea8fe; /* Dark blue */
+        color: #fff;
+    }
+    .table-header-light {
+        background-color: #6ea8fe; /* Bright blue */
+        color: #000;
+    }
+    .table {
+        width: 60%;
+        margin: auto;
+        background-color: #f7f7f7; /* Table background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+</style>
+
+</head>
+<body>
+    <!-- Report Title -->
+    <div class="report-title text-uppercase text-center">[WARNING] WebLogic Environment Status</div>
+
+    <!-- Server Status Report -->
+    <div class="section-header text-center">SERVER STATUS REPORT : t3://soadev1:7001</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-header">
+                <th>Server Name</th>
+                <th>Status</th>
+                <th>Health</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>soa_server1</td>
+                <td>RUNNING</td>
+                <td class="bg-warning">WARN</td>
+            </tr>
+            <tr>
+                <td>AdminServer</td>
+                <td>RUNNING</td>
+                <td class="bg-success">OK</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Server Heap Size Report -->
+    <div class="section-header text-center">SERVER HEAP SIZE REPORT</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-header-light">
+                <th>Managed Server</th>
+                <th>HeapFreeCurrent</th>
+                <th>HeapSizeCurrent</th>
+                <th>HeapFreePercent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>soa_server1</td>
+                <td>4474.6 MB</td>
+                <td>8158.75 MB</td>
+                <td>54.0%</td>
+            </tr>
+            <tr>
+                <td>AdminServer</td>
+                <td>1467.35 MB</td>
+                <td>4062.75 MB</td>
+                <td>36.0%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- JDBC Runtime Information -->
+    <div class="section-header text-center">SERVER JDBC RUNTIME INFORMATION</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-header">
+                <th>Data Source</th>
+                <th>State</th>
+                <th>Active Connections</th>
+                <th>Waiting for Connections</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SOADataSource</td>
+                <td>Running</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>mds-soa</td>
+                <td>Running</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- JMS Status Information -->
+    <div class="section-header text-center">SERVER JMS STATUS INFORMATION</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-header-light">
+                <th>SERVER</th>
+                <th>JMSServer</th>
+                <th>DestinationName</th>
+                <th>DestinationType</th>
+                <th>MessagesCurrentCount</th>
+                <th>MessagesHighCount</th>
+                <th>ConsumersCurrentCount</th>
+                <th>ConsumersHighCount</th>
+                <th>ConsumersTotalCount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>soa_server2</td>
+                <td>UMSJMSServer_auto_2</td>
+                <td>..._Q1_auto</td>
+                <td>Queue</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>soa_server2</td>
+                <td>UMSJMSServer_auto_2</td>
+                <td>..._Q1_auto</td>
+                <td>Queue</td>
+                <td>33</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>soa_server2</td>
+                <td>UMSJMSServer_auto_2</td>
+                <td>..._Q1_auto</td>
+                <td>Queue</td>
+                <td>14</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>soa_server2</td>
+                <td>UMSJMSServer_auto_2</td>
+                <td>..._Q1_auto</td>
+                <td>Queue</td>
+                <td>48</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- End of Report -->
+    <div class="text-center mt-4 font-weight-bold">********** END OF REPORT **********</div>
+</body>
+</html>
