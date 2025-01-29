@@ -41,7 +41,7 @@ wlst.cmd weblogic_status_reporter.py <WebLogic_Server_IP>
 For Linux:
 
 ```sh
-wlst.sh weblogic\_status\_reporter.py \<WebLogic\_Server\_IP>
+wlst.sh weblogic_status_reporter.py <WebLogic_Server_IP>
 ```
 
 Replace `<WebLogic_Server_IP>` with the target WebLogic server's IP or use `localhost` if running locally.
